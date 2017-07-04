@@ -25,8 +25,8 @@
 		<mysql.version>5.1.30</mysql.version>
 		<fastjson.version>1.1.41</fastjson.version>
 		<servlet.version>3.1.0</servlet.version>
-
-
+		<dbcp.version>1.2.1</dbcp.version>
+		<mybatis-spring.version>1.2.2</mybatis-spring.version>
 	</properties>
 
 	<dependencyManagement>
@@ -60,7 +60,18 @@
 				<version>${servlet.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>commons-dbcp</groupId>
+				<artifactId>commons-dbcp</artifactId>
+				<version>${dbcp.version}</version>
+			</dependency>
 
+			<!-- mybatis/spring包 -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis-spring.version}</version>
+			</dependency>
 
 
 			<!-- spring核心包 -->
@@ -175,6 +186,7 @@
 		<module>quickgo-system</module>
 		<module>quickgo-web</module>
 		<module>quickgo-order</module>
+		<module>quickgo-test</module>
 	</modules>
 	<organization>
 		<name>SnailTean</name>

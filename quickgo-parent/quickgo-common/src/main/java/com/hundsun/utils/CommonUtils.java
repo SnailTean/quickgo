@@ -4,6 +4,13 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Map;
 
+/**
+ * 
+* @Description: 公共工具类
+* @author liuyang下午5:16:00CommonUtils.java
+* @date 2017年6月26日 下午5:16:00
+*
+ */
 public class CommonUtils
 {
 

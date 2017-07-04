@@ -4,6 +4,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * 
+* @Description: 属性文件工具类
+* @author liuyang下午5:16:26PropertiesUtils.java
+* @date 2017年6月26日 下午5:16:26
+*
+ */
 public class PropertiesUtils
 {
     private static Properties props;

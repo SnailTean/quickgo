@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+ <!--Appendar详解: http://logback.qos.ch/manual/appenders.html#RollingFileAppender -->
+ 
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 当前Log文件名 -->
+    <file>${catalina.base}/logs/quickgo.log</file>
+   <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">  
+        <fileNamePattern>${catalina.base}/logs/quickgo.%i.log.gz  
+        </fileNamePattern>  
+        <!-- 归档日志的下标，替换fileNamePattern的%i，最多3个归档文件 -->  
+        <minIndex>1</minIndex>  
+        <maxIndex>3</maxIndex>  
+    </rollingPolicy>  
+  
+    <!-- triggeringPolicy定义什么时候滚动，下面是定义了文件大小超过20M的时候产生归档文件 -->  
+    <triggeringPolicy  
+        class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">  
+        <maxFileSize>20MB</maxFileSize>  
+    </triggeringPolicy>  
+  
+    <!-- append是否接着上次写文件结尾继续写，默认为true -->  
+    <append>false</append>  
+    <encoding>GBK</encoding>  
+  
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <!-- 格式说明:http://logback.qos.ch/manual/layouts.html#ClassicPatternLayout -->
+      <!--<Pattern>%d [%thread] %-5level %40logger{40} - %msg%n</Pattern>-->
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>  
+    </layout>
+  </appender>
+  
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> 
+  
+        <!-- encoder的默认实现类是ch.qos.logback.classic.encoder.PatternLayoutEncoder -->  
+        <encoder>  
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>  
+        </encoder>  
+    </appender> 
+    
+  <logger name="org.springframework" additivity="false" level="info">
+  <appender-ref ref="STDOUT" /> 
+  </logger>
+  
+  <root level="info">
+    <appender-ref ref="FILE"/>
+  </root>
+
+</configuration>
+
