@@ -1,29 +1,34 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.hundsun</groupId>
-    <artifactId>quickgo-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <relativePath>../quickgo-parent/pom.xml</relativePath>
-  </parent>
-  <artifactId>quickgo-web</artifactId>
-  <packaging>war</packaging>
-  <name>quickgo-web Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context</artifactId>
-			</dependency>
-  </dependencies>
-  <build>
-    <finalName>quickgo-web</finalName>
-  </build>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.hundsun</groupId>
+		<artifactId>quickgo-parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../quickgo-parent/pom.xml</relativePath>
+	</parent>
+	<artifactId>quickgo-web</artifactId>
+	<packaging>war</packaging>
+	<name>quickgo-web Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>quickgo-web</finalName>
+	</build>
 </project>
